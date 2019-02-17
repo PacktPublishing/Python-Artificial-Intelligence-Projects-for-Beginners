@@ -45,8 +45,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Artificial Intelligence with Python [[Packt]](https://www.packtpub.com/big-data-and-business-intelligence/artificial-intelligence-example#utm_source=github&utm_medium=repository&utm_campaign=9781786464392) [[Amazon]](https://www.amazon.com/dp/178646439X)
 
 ## Get to Know the Author(s)
-**Prateek Joshi**
-Prateek Joshi is an artificial intelligence researcher, TEDx speaker, and published author of 5 books. Founder of venture-funded Silicon Valley startup Pluto AI, his work in the AI field has led to patents, tech demos and research papers. Prateek has worked for companies including Nvidia and Microsoft Research, and is a popular tech blogger and avid coder.
+**Joshua Eckroth**
+Dr. Joshua Eckroth is assistant professor of computer science at Stetson University, where he teaches artificial intelligence (AI), big data mining and analytics, and software engineering. He earned his PhD from The Ohio State University in AI and cognitive science. Dr. Eckroth also serves as Chief Architect at i2k Connect, which focuses on transforming documents into structured data using AI and enriched with subject matter expertise.
 
 
 
