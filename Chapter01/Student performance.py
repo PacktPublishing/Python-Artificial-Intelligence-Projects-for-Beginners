@@ -6,7 +6,7 @@
 
 # load dataset (student Portuguese scores)
 import pandas as pd
-d = pd.read_csv('student-por.csv', sep=';')
+d = pd.read_csv('dataset/student-por.csv', sep=';')
 len(d)
 
 

@@ -7,7 +7,7 @@
 import pandas as pd
 
 # some lines have too many fields (?), so skip bad lines
-imgatt = pd.read_csv("data/CUB_200_2011/attributes/image_attribute_labels.txt",
+imgatt = pd.read_csv("image_attribute_labels.txt",
                      sep='\s+', header=None, error_bad_lines=False, warn_bad_lines=False,
                      usecols=[0,1,2], names=['imgid', 'attid', 'present'])
 
@@ -63,7 +63,7 @@ imgatt2.shape
 
 # now we need to load the image true classes
 
-imglabels = pd.read_csv("data/CUB_200_2011/image_class_labels.txt", 
+imglabels = pd.read_csv("image_class_labels.txt", 
                         sep=' ', header=None, names=['imgid', 'label'])
 
 imglabels = imglabels.set_index('imgid')
@@ -149,7 +149,8 @@ clf.fit(df_train_att, df_train_label)
 
 
 print(clf.predict(df_train_att.head()))
-
+# In[60]:
+print(clf.predict(df_test_att.head()))
 
 # In[61]:
 
@@ -215,7 +216,7 @@ def plot_confusion_matrix(cm, classes,
 # In[65]:
 
 
-birds = pd.read_csv("data/CUB_200_2011/classes.txt",
+birds = pd.read_csv("classes.txt",
                     sep='\s+', header=None, usecols=[1], names=['birdname'])
 birds = birds['birdname']
 birds
