@@ -4,12 +4,12 @@
 # In[1]:
 
 
-import gensim, logging
+import gensim,logging
 
 
 # In[2]:
 
-
+#setting setiap aktifitas keluar log nya yang berisi info waktu, level,pesan
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
