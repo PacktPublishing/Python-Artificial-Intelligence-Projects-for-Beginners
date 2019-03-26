@@ -17,14 +17,16 @@ gmodel = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-neg
 
 # In[4]: testing gmodel untuk cat dog dan spatula
 gmodel['cat']
+# In[4]: dog
 
 gmodel['dog']
-
+# In[4]: spatula
 gmodel['spatula']
 
 # In[5]: mengecek similaritas
 
 gmodel.similarity('cat','dog')
+# In[5]:
 
 gmodel.similarity('cat','spatula')
 
@@ -42,11 +44,16 @@ def extract_words(sent):
     sent = re.sub(r'(\w)\'(\w)', ' ', sent) #hapus petik satu
     sent = re.sub(r'\W', ' ', sent) #hapus tanda baca
     sent = re.sub(r'\s+', ' ', sent) #hapus spasi yang berurutan
+    return sent
+
 
 import random
 class PermuteSentences(object):
+    def __init__(self,sents):
+        self.sents = sents
+        
     def __iter__(self):
-        shuffled = list(sentences)
+        shuffled = list(self.sents)
         random.shuffle(shuffled)
         for sent in shuffled:
             yield sent
@@ -65,6 +72,8 @@ for dirname in ["train/pos","train/neg","train/unsup","test/pos","test/neg"]:
                 sent = f.read()
                 words = extract_words(sent)
                 unsup_sentences.append(TaggedDocument(words,[dirname+"/"+fname]))
+
+# In[9]: data ke dua
                 
 for dirname in ["review_polarity/txt_sentoken/pos","review_polarity/txt_sentoken/neg"]:
     for fname in sorted(os.listdir(dirname)):
@@ -74,6 +83,7 @@ for dirname in ["review_polarity/txt_sentoken/pos","review_polarity/txt_sentoken
                     words = extract_words(sent)
                     unsup_sentences.append(TaggedDocument(words,["%s/%s-%d" % (dirname,fname,i)]))
 
+# In[10]: data ketiga
 with open("stanfordSentimentTreebank/original_rt_snippets.txt",encoding='UTF-8') as f:
     for i, sent in enumerate(f):
         words = extract_words(sent)
@@ -84,13 +94,19 @@ with open("stanfordSentimentTreebank/original_rt_snippets.txt",encoding='UTF-8')
 # In[8]: lihat banyaknya isi unsup_sentences
         
 len(unsup_sentences)
+# In[8]: 10 data pertama
 unsup_sentences[0:10]
+
 
 
 # In[9]: kocok dulu mang sebelum jadiiin model
 
 permuter = PermuteSentences(unsup_sentences)
-model = Doc2Vec(permuter, dm=0,hs=1,size=50)
+#permuters = []
+#permuters = [list(map(str, permuter)) for permuter in permuters]
+#permuter = random.shuffle(unsup_sentences)
+# In[9]: baru dibuat modelnya
+model = Doc2Vec(permuter, dm=0,hs=1,vector_size=52)
 
 # In[10]: kosongin memeri dulu gaes biar enteng
 
