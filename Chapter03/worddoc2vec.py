@@ -38,6 +38,7 @@ from gensim.models import Doc2Vec
 
 
 # In[7]: buat fungsi buat menghapus html tags dan perkocakan dunia
+import re
 def extract_words(sent):
     sent = sent.lower()
     sent = re.sub(r'<[^>]+>', ' ', sent) #hapus tag html
@@ -61,7 +62,7 @@ class PermuteSentences(object):
 # In[8]: unsupervised training data
 
 
-import re
+
 import os
 unsup_sentences = []
 
@@ -114,11 +115,12 @@ model.delete_temporary_training_data(keep_inference=True)
 
 model.save('reviews.d2v')
 
-
+# In[111]: load mpodel dari file
+model = Doc2Vec.load('reviews.d2v')
 
 # In[12]: infer
 
-model.infer_vector(extract_words("This place is not worth your time, let alone Vegas."))
+model.infer_vector(extract_words("This place is not worth your time"))
 
 # In[13]: Mengecek similaritas
 
@@ -138,6 +140,7 @@ cosine_similarity(
 
 
 # In[19]: load real dataset untuk prediksi
+
 
 sentvecs = []
 sentences = []
