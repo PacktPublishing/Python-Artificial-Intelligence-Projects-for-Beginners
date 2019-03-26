@@ -44,7 +44,7 @@ def extract_words(sent):
     sent = re.sub(r'(\w)\'(\w)', ' ', sent) #hapus petik satu
     sent = re.sub(r'\W', ' ', sent) #hapus tanda baca
     sent = re.sub(r'\s+', ' ', sent) #hapus spasi yang berurutan
-    return sent
+    return sent.split()
 
 
 import random
@@ -95,16 +95,14 @@ with open("stanfordSentimentTreebank/original_rt_snippets.txt",encoding='UTF-8')
         
 len(unsup_sentences)
 # In[8]: 10 data pertama
-unsup_sentences[0:10]
+unsup_sentences[0:1]
 
 
 
 # In[9]: kocok dulu mang sebelum jadiiin model
 
 permuter = PermuteSentences(unsup_sentences)
-#permuters = []
-#permuters = [list(map(str, permuter)) for permuter in permuters]
-#permuter = random.shuffle(unsup_sentences)
+
 # In[9]: baru dibuat modelnya
 model = Doc2Vec(permuter, dm=0,hs=1,vector_size=52)
 
