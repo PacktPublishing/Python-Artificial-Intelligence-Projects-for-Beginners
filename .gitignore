@@ -8,3 +8,6 @@
 *README*
 *.vocab
 *.feat
+music_speech/
+genres/
+*.wav
