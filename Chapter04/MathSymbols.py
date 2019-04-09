@@ -33,7 +33,7 @@ split_idx = int(0.8*len(imgs))
 train = imgs[:split_idx]
 test = imgs[split_idx:]
 
-# In[3]: 
+# In[4]: 
 
 import numpy as np
 
@@ -43,22 +43,22 @@ test_input = np.asarray(list(map(lambda row: row[2], test)))
 train_output = np.asarray(list(map(lambda row: row[1], train)))
 test_output = np.asarray(list(map(lambda row: row[1], test)))
 
-# In[3]: import encoder and one hot
+# In[5]: import encoder and one hot
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 
-# In[3]:convert class names into one-hot encoding
+# In[6]:convert class names into one-hot encoding
 
 # first, convert class names into integers
 label_encoder = LabelEncoder()
 integer_encoded = label_encoder.fit_transform(classes)
 
-# In[4]:then convert integers into one-hot encoding
+# In[7]:then convert integers into one-hot encoding
 onehot_encoder = OneHotEncoder(sparse=False)
 integer_encoded = integer_encoded.reshape(len(integer_encoded), 1)
 onehot_encoder.fit(integer_encoded)
 
-# In[5]:convert train and test output to one-hot
+# In[8]:convert train and test output to one-hot
 train_output_int = label_encoder.transform(train_output)
 train_output = onehot_encoder.transform(train_output_int.reshape(len(train_output_int), 1))
 test_output_int = label_encoder.transform(test_output)
@@ -67,12 +67,12 @@ test_output = onehot_encoder.transform(test_output_int.reshape(len(test_output_i
 num_classes = len(label_encoder.classes_)
 print("Number of classes: %d" % num_classes)
 
-# In[6]: import sequential
+# In[9]: import sequential
 
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
-# In[6]: desain jaringan
+# In[10]: desain jaringan
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3), activation='relu',
                  input_shape=np.shape(train_input[0])))
@@ -89,12 +89,12 @@ model.compile(loss='categorical_crossentropy', optimizer='adam',
 
 print(model.summary())
 
-# In[6]: import sequential
+# In[11]: import sequential
 
 import keras.callbacks
 tensorboard = keras.callbacks.TensorBoard(log_dir='./logs/mnist-style')
 
-# In[6]: 5menit kali 10 epoch = 50 menit
+# In[12]: 5menit kali 10 epoch = 50 menit
 model.fit(train_input, train_output,
           batch_size=32,
           epochs=10,
@@ -106,7 +106,7 @@ score = model.evaluate(test_input, test_output, verbose=2)
 print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
-# In[6]:try various model configurations and parameters to find the best
+# In[13]:try various model configurations and parameters to find the best
 
 import time
 
@@ -142,7 +142,7 @@ for conv2d_count in [1, 2]:
             results.append((conv2d_count, dense_size, dropout, score[0], score[1], elapsed))
 
 
-# In[7]:rebuild/retrain a model with the best parameters (from the search) and use all data
+# In[14]:rebuild/retrain a model with the best parameters (from the search) and use all data
 model = Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=np.shape(train_input[0])))
 model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -154,26 +154,26 @@ model.add(Dropout(0.5))
 model.add(Dense(num_classes, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print(model.summary())
-# In[8]:join train and test data so we train the network on all data we have available to us
+# In[15]:join train and test data so we train the network on all data we have available to us
 model.fit(np.concatenate((train_input, test_input)),
           np.concatenate((train_output, test_output)),
           batch_size=32, epochs=10, verbose=2)
 
-# In[9]:save the trained model
+# In[16]:save the trained model
 model.save("mathsymbols.model")
 
-# In[10]:save label encoder (to reverse one-hot encoding)
+# In[17]:save label encoder (to reverse one-hot encoding)
 np.save('classes.npy', label_encoder.classes_)
 
 
-# In[11]:load the pre-trained model and predict the math symbol for an arbitrary image;
+# In[18]:load the pre-trained model and predict the math symbol for an arbitrary image;
 # the code below could be placed in a separate file
 
 import keras.models
 model2 = keras.models.load_model("mathsymbols.model")
 print(model2.summary())
 
-# In[12]:restore the class name to integer encoder
+# In[19]:restore the class name to integer encoder
 label_encoder2 = LabelEncoder()
 label_encoder2.classes_ = np.load('classes.npy')
 
@@ -188,7 +188,7 @@ def predict(img_path):
     inverted = label_encoder2.inverse_transform([np.argmax(prediction)]) # argmax finds highest-scoring output
     print("Prediction: %s, confidence: %.2f" % (inverted[0], np.max(prediction)))
 
-# In[13]: grab an image (we'll just use a random training image for demonstration purposes)
+# In[20]: grab an image (we'll just use a random training image for demonstration purposes)
 predict("HASYv2/hasy-data/v2-00010.png")
 
 predict("HASYv2/hasy-data/v2-00500.png")
