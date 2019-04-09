@@ -1,8 +1,3 @@
-# In[0]: mencoba ipython display dan ambil example image from the dataset
-
-#from IPython.display import Image
-#Image(url="HASYv2/hasy-data/v2-00010.png")
-
 # In[1]:import lib
 import csv
 from PIL import Image as pil_image
