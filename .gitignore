@@ -1,3 +1,4 @@
+*.tar.bz2
 .DS_Store
 *.bin
 *.txt
@@ -11,3 +12,5 @@
 music_speech/
 genres/
 *.wav
+logs/
+HASYv2/
