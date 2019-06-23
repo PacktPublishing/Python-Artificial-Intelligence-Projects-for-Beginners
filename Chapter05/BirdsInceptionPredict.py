@@ -2,14 +2,14 @@ from keras.models import load_model
 from keras.preprocessing import image
 from os import listdir
 import numpy as np
-
+# In[1]:import lib
 ROWS = 256
 COLS = 256
 
 CLASS_NAMES = sorted(listdir('images'))
-
+# In[1]:import lib
 model = load_model('birds-inceptionv3.model')
-
+# In[1]:import lib
 def predict(fname):
     img = image.load_img(fname, target_size=(ROWS, COLS))
     img_tensor = image.img_to_array(img) # (height, width, channels)
@@ -21,11 +21,11 @@ def predict(fname):
     best_score_index = np.argmax(prediction)
     bird = CLASS_NAMES[best_score_index] # retrieve original class name
     print("Prediction: %s (%.2f%%)" % (bird, 100*prediction[best_score_index]))
-
+# In[1]:import lib
 predict('test-birds/annas_hummingbird_sim_1.jpg')
 predict('test-birds/house_wren.jpg')
 predict('test-birds/canada_goose_1.jpg')
-
+# In[1]:import lib
 # interactive user input
 while True:
     fname = input("Enter filename: ")

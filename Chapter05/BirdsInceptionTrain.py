@@ -7,21 +7,21 @@ from keras.utils import np_utils
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import TensorBoard
 import itertools
-
+# In[1]:import lib
 # all images will be converted to this size
 ROWS = 256
 COLS = 256
 CHANNELS = 3
-
+# In[1]:import lib
 train_image_generator = ImageDataGenerator(horizontal_flip=True, rescale=1./255, rotation_range=45)
 test_image_generator = ImageDataGenerator(horizontal_flip=False, rescale=1./255, rotation_range=0)
-
+# In[1]:import lib
 train_generator = train_image_generator.flow_from_directory('train', target_size=(ROWS, COLS), class_mode='categorical')
 test_generator = test_image_generator.flow_from_directory('test', target_size=(ROWS, COLS), class_mode='categorical')
-
+# In[1]:import lib
 # create the base pre-trained model
 base_model = InceptionV3(weights='imagenet', include_top=False)
-
+# In[1]:import lib
 # add a global spatial average pooling layer
 x = base_model.output
 x = GlobalAveragePooling2D()(x)
@@ -40,11 +40,11 @@ for layer in base_model.layers:
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 print(model.summary())
-
+# In[1]:import lib
 tensorboard = TensorBoard(log_dir='./logs/inceptionv3')
-
+# In[1]:import lib
 model.fit_generator(train_generator, steps_per_epoch=32, epochs=100, callbacks=[tensorboard], verbose=2)
-
+# In[1]:import lib
 print(model.evaluate_generator(test_generator, steps=5000))
 
 # unfreeze all layers for more training
