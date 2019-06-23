@@ -51,7 +51,6 @@ model.fit_generator(train_generator, steps_per_epoch=512, epochs=10, callbacks=[
 
 # In[1]:save model
 model.save("birds-inceptionv3.model")
-# In[1]:load model
-model = load_model('model.h5')
+
 # In[1]:import lib
 print(model.evaluate_generator(test_generator, steps=1000))
