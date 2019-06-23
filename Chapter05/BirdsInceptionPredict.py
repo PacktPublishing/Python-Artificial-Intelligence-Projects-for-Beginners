@@ -6,7 +6,7 @@ import numpy as np
 ROWS = 256
 COLS = 256
 
-CLASS_NAMES = sorted(listdir('images'))
+CLASS_NAMES = sorted(listdir('train'))
 # In[1]:import lib
 model = load_model('birds-inceptionv3.model')
 # In[1]:import lib
@@ -22,6 +22,9 @@ def predict(fname):
     bird = CLASS_NAMES[best_score_index] # retrieve original class name
     print("Prediction: %s (%.2f%%)" % (bird, 100*prediction[best_score_index]))
 # In[1]:import lib
+predict('./test-birds/albat.jpg')
+# In[1]:import lib
+    
 predict('test-birds/annas_hummingbird_sim_1.jpg')
 predict('test-birds/house_wren.jpg')
 predict('test-birds/canada_goose_1.jpg')
