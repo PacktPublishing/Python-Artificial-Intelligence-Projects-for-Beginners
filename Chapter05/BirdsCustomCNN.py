@@ -50,7 +50,7 @@ tensorboard = TensorBoard(log_dir='./logs/custom')
 model.fit_generator(train_generator, steps_per_epoch=512, epochs=10, callbacks=[tensorboard], verbose=2)
 
 # In[1]:save model
-model.save("model.h5")
+model.save("birds-inceptionv3.model")
 # In[1]:load model
 model = load_model('model.h5')
 # In[1]:import lib

@@ -1,3 +1,4 @@
+*.model
 *.jpg
 *.h5
 *.tar.bz2
