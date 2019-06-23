@@ -28,15 +28,15 @@ x = GlobalAveragePooling2D()(x)
 # add a fully-connected layer
 x = Dense(1024, activation='relu')(x)
 out_layer = Dense(200, activation='softmax')(x)
-
+# In[1]:import lib
 # this is the model we will train
 model = Model(inputs=base_model.input, outputs=out_layer)
-
+# In[1]:import lib
 # first: train only the top layers (which were randomly initialized)
 # i.e. freeze all convolutional InceptionV3 layers
 for layer in base_model.layers:
     layer.trainable = False
-
+# In[1]:import lib
 model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 
 print(model.summary())
@@ -46,19 +46,19 @@ tensorboard = TensorBoard(log_dir='./logs/inceptionv3')
 model.fit_generator(train_generator, steps_per_epoch=32, epochs=100, callbacks=[tensorboard], verbose=2)
 # In[1]:import lib
 print(model.evaluate_generator(test_generator, steps=5000))
-
+# In[1]:import lib
 # unfreeze all layers for more training
 for layer in model.layers:
     layer.trainable = True
-
+# In[1]:import lib
 # we need to recompile the model for these modifications to take effect
 # we use SGD with a low learning rate
 model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), loss='categorical_crossentropy', metrics=['accuracy'])
-
+# In[1]:import lib
 model.fit_generator(train_generator, steps_per_epoch=32, epochs=100)
-
+# In[1]:import lib
 test_generator.reset()
 print(model.evaluate_generator(test_generator, steps=5000))
-
+# In[1]:import lib
 model.save("birds-inceptionv3.model")
 
