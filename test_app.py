@@ -15,7 +15,7 @@ class TestApp(unittest.TestCase):
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
         hasiltestingsemua = 	testing(t,d_test_att)
-        print('hasil testing : ')
+        print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)

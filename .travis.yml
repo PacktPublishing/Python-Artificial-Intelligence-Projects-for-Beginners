@@ -1,7 +1,7 @@
 sudo: enabled
 language: python
 python:
-  - "3.7"
+  - "3.8"
 script:
   - pytest -v -s --cov=Chapter01 --cov-report term-missing
 before_script:
