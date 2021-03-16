@@ -40,9 +40,6 @@ def training(d_train_att,d_train_pass):
 def testing(t,testdataframe):
     return t.predict(testdataframe)
 
-def main
-    dataset='Chapter01/dataset/student-por.csv'
-    d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
-    t = training(d_train_att,d_train_pass)
+
     
 
