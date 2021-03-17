@@ -19,6 +19,35 @@ class TestApp(unittest.TestCase):
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
-        
 
+    def test_03_angga_1184047(self):
+        from Chapter01.angga1184047 import preprocessing, training, predict
 
+        while True:
+            data = preprocessing()
+
+            # training data
+            data_train = data['training']
+            data_training = data_train['data_training']
+            data_training_label = data_train['data_training_label']
+
+            # testing data
+            data_train = data['testing']
+            data_testing = data_train['data_testing']
+            data_testing_label = data_train['data_testing_label']
+
+            # training
+            t = training(data_training, data_training_label)
+
+            # predict
+            prediction = predict(t, data_testing)
+
+            print(data_testing_label.values[0])
+            print(prediction[0])
+            if data_testing_label.values[0] == prediction[0]:
+                print("hasil sama")
+                break
+            else:
+                print("hasil beda")
+
+        self.assertEqual(data_testing_label.values[0], prediction[0])
