@@ -1,6 +1,6 @@
 # Python Artificial Intelligence Projects for Beginners
 
-<a href="https://www.packtpub.com/big-data-and-business-intelligence/python-artificial-intelligence-projects-beginners#utm_source=github&utm_medium=repository&utm_campaign=9781789539462"><img src="https://travis-ci.com/awangga/Python-Artificial-Intelligence-Projects-for-Beginners.svg?branch=master" alt="Python Artificial Intelligence Projects for Beginners" height="256px" align="right"></a>
+<a href="https://www.packtpub.com/big-data-and-business-intelligence/python-artificial-intelligence-projects-beginners#utm_source=github&utm_medium=repository&utm_campaign=9781789539462"><img src="https://travis-ci.com/awangga/Python-Artificial-Intelligence-Projects-for-Beginners.svg?branch=2021b" alt="Python Artificial Intelligence Projects for Beginners" height="256px" align="right"></a>
 
 This is the code repository for [Python Artificial Intelligence Projects for Beginners](https://www.packtpub.com/big-data-and-business-intelligence/python-artificial-intelligence-projects-beginners#utm_source=github&utm_medium=repository&utm_campaign=9781789539462), published by Packt.
 
