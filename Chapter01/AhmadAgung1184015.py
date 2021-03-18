@@ -10,14 +10,14 @@ from sklearn import tree
 from sklearn.model_selection import cross_val_score
 
 def preparation():
-    vg = pandas.read_csv('Chapter01/dataset/vgsales.csv', sep=',')
+    vg = pandas.read_csv('Chapter01/dataset/dota2Test.csv', sep=',')
     vg = vg.sample(frac=1)
     vg_train = vg[:5147]
     vg_test = vg[5147:]
-    vg_train_attribute = vg_train.drop(['Global_Sales'], axis=1)
-    vg_train_gbs = vg_train['Global_Sales']
-    vg_train_attribute = vg_test.drop(['Global_Sales'], axis=1)
-    vg_test_gbs = vg_test['Global_Sales']
+    vg_train_attribute = vg_train.drop(['win'], axis=1)
+    vg_train_gbs = vg_train['win']
+    vg_train_attribute = vg_test.drop(['win'], axis=1)
+    vg_test_gbs = vg_test['win']
     data = [[vg_train_attribute,vg_train_gbs], [vg_train_attribute, vg_test_gbs]]
     return data
 
