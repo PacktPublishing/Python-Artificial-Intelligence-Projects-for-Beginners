@@ -117,9 +117,10 @@ class TestApp(unittest.TestCase):
 
         t = training(d_train_att, d_train_pass)
 
-        alltesting = testing(t, d_test_att)
+        hasiltestingsemua = testing(t, d_test_att)
         
-        print('\n testing : ')
-        print(alltesting)
-        ambilsatuhasiltesting = alltesting[0]
+
+        print('\n hasil testing Agung : ')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
