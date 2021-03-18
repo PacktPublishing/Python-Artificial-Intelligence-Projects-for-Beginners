@@ -13,10 +13,10 @@ def preparation():
     vg = vg.sample(frac=1)
     vg_train = vg[:5147]
     vg_test = vg[5147:]
-    vg_train_attribute = vg_train.drop(['win'], axis=1)
-    vg_train_gbs = vg_train['win']
-    vg_train_attribute = vg_test.drop(['win'], axis=1)
-    vg_test_gbs = vg_test['win']
+    vg_train_attribute = vg_train.drop(['razor'], axis=1)
+    vg_train_gbs = vg_train['razor']
+    vg_train_attribute = vg_test.drop(['razor'], axis=1)
+    vg_test_gbs = vg_test['razor']
     data = [[vg_train_attribute,vg_train_gbs], [vg_train_attribute, vg_test_gbs]]
     return data
 
