@@ -104,6 +104,7 @@ class TestApp(unittest.TestCase):
         t = training(dfs_train_att, dfs_train_win)
         #predict
         result = testing(t,dfs_test_att)
+        #show result
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
