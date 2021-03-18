@@ -138,3 +138,27 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
+        
+
+    def test_02_FarisMuhammadIhsan_1184099(self):
+        from Chapter01.FarisIhsan1184099 import preparation, train, test
+        
+        #path ke dataset
+        dataset = 'Chapter01/dataset/stroke.csv'
+        
+        # testing function preparation
+        d_train_att, d_train_stroke, d_test_att, d_test_stroke, d_att, d_stroke = preparation(dataset)
+        
+        #testing function training
+        t = train(d_train_att, d_train_stroke)
+        
+        #testing function testing
+        hasiltestingsemua = test(t, d_test_att)
+        
+        #hasil
+        print('\n hasil test Faris :')
+        print(hasiltestingsemua)
+        ambilsatuhasiltesting = hasiltestingsemua[0]
+        self.assertLessEqual(ambilsatuhasiltesting, 1)
+
+
