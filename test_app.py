@@ -108,23 +108,22 @@ class TestApp(unittest.TestCase):
         print(result)
         self.assertLessEqual(result[0], 1)
 
-    def test_03_AhmadAgung_1184015(self):
-        from Chapter01.AhmadAgung1184015 import preparation, training, testing
-        
-        #path ke dataset
-        datasetpath = 'Chapter01/dataset/vgsales.csv'
-        
-        # testing function preparation
-        d_train_att, d_train_pass, d_test_att, d_test_pass, d_att, d_pass = preparation(datasetpath)
-        
-        #testing function training
-        s = training(d_train_att, d_train_pass)
-        
-        #testing function testing
-        hasiltestingsemua = testing(s, d_test_att)
-        
-        #hasil
-        print('\n hasil testing agung : ')
-        print(hasiltestingsemua)
-        ambilsatuhasiltesting = hasiltestingsemua[0]
-        self.assertLessEqual(ambilsatuhasiltesting, 1)
+    def test_02_AhmadAgung_1184015(self):
+        from Chapter01.AhmadAgung1184015 import preparation,training,testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        vg_train_att = train.pop(0)
+        vg_train_gbs = train.pop(0)
+        #test data
+        test = data.pop(0)
+        vg_test_att = test.pop(0)
+        vg_test_gbs = test.pop(0)
+        #training
+        t = training(vg_train_att, vg_train_gbs)
+        #predict
+        result = testing(t,vg_test_att)
+        print("result : ")
+        print(result)
+        self.assertLessEqual(result[0], 1)
