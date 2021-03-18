@@ -107,4 +107,15 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
+        
+    def test_02_alifiaZahra_1184051(self):
+        from Chapter01.alifiaZahra1184051 import preparation, training, testing
+        dataset ='Chapter01/dataset/bank-additional-full.csv'
+        d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
+        t = training(d_train_att,d_train_pass)
+        allresult = testing(t,d_test_att)
+        print('\n hasil testing : ')
+        print(allresult)
+        oneresult = allresult[0]
+        self.assertLessEqual(oneresult, 1)
 
