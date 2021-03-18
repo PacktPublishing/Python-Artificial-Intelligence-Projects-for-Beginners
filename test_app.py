@@ -68,7 +68,7 @@ class TestApp(unittest.TestCase):
         ambilsatuhasiltesting = hasiltestingsemua[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
         
-     def test_02_DyningAida_1184030(self):
+    def test_02_DyningAida_1184030(self):
         from Chapter01.DyningAida1184030 import preparation, training, testing
         
         #path ke dataset
