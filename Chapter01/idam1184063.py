@@ -3,7 +3,7 @@ from sklearn import tree
 from sklearn.model_selection import cross_val_score
 
 def preparation():
-    dfs = pandas.read_csv('Chapter01/dataset/student-por.csv', sep=',')
+    dfs = pandas.read_csv('Chapter01/dataset/dota2Test.csv', sep=',')
     dfs = dfs.sample(frac=1)
     dfs_train = dfs[:5147]
     dfs_test = dfs[5147:]
