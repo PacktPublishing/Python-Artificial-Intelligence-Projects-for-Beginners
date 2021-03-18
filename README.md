@@ -1,4 +1,4 @@
-# Python Artificial Intelligence Projects for Beginners
+# Python Artificial Intelligence Projects for Beginners Kelas Awangga
 
 <a href="https://www.packtpub.com/big-data-and-business-intelligence/python-artificial-intelligence-projects-beginners#utm_source=github&utm_medium=repository&utm_campaign=9781789539462"><img src="https://travis-ci.com/awangga/Python-Artificial-Intelligence-Projects-for-Beginners.svg?branch=2021b" alt="Python Artificial Intelligence Projects for Beginners" height="256px" align="right"></a>
 
@@ -35,7 +35,7 @@ With the following software and hardware list you can run all code files present
 
 | Chapter  | Software required                   | OS required                        |
 | -------- | ------------------------------------| -----------------------------------|
-| 1 - 5    | Python 3.4 or later                 | A Windows 7+, macOS, 10.10+, or Linux-based computer with 4 GB RAM or above |
+| 1 - 5    | Python 3.4,3.8 or later             | A Windows 7+, macOS, 10.10+, or Linux-based computer with 4 GB RAM or above |
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://www.packtpub.com/sites/default/files/downloads/PythonArtificialIntelligenceProjectsforBeginners_ColorImages.pdf).
 
