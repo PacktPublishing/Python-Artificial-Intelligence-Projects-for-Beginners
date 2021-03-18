@@ -120,6 +120,6 @@ class TestApp(unittest.TestCase):
         alltesting = testing(t, d_test_att)
         
         print('\n testing : ')
-        print(hasiltestingsemua)
-        ambilsatuhasiltesting = hasiltestingsemua[0]
+        print(alltesting)
+        ambilsatuhasiltesting = alltesting[0]
         self.assertLessEqual(ambilsatuhasiltesting, 1)
