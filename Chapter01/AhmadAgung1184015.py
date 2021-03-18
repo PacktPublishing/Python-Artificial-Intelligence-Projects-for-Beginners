@@ -14,11 +14,11 @@ def preparation():
     vg = vg.sample(frac=1)
     vg_train = vg[:5147]
     vg_test = vg[5147:]
-    vg_train_att = vg_train.drop(['Global_Sales'], axis=1)
+    vg_train_attribute = vg_train.drop(['Global_Sales'], axis=1)
     vg_train_gbs = vg_train['Global_Sales']
-    vg_test_att = vg_test.drop(['Global_Sales'], axis=1)
+    vg_train_attribute = vg_test.drop(['Global_Sales'], axis=1)
     vg_test_gbs = vg_test['Global_Sales']
-    data = [[vg_train_att,vg_train_gbs], [vg_test_att, vg_test_gbs]]
+    data = [[vg_train_attribute,vg_train_gbs], [vg_train_attribute, vg_test_gbs]]
     return data
 
 def training(vg_train_att, vg_train_gbs):
