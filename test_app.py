@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/student-por.csv'
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
-        hasiltestingsemua = 	testing(t,d_test_att)
+        hasiltestingsemua = testing(t,d_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
@@ -107,4 +107,49 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    def test_02_rayhanprastya_1184069(self):
+        from Chapter01.rayhanprastya1184069 import preparation,training, testing
+        datasetpath = 'Chapter01/dataset/insurance.csv'
+        data = preparation(datasetpath)
+        # data train
+        dat_train = data.pop(0)
+        dat_train_atr = dat_train.pop(0)
+        dat_train_harga = dat_train.pop(0)
+        # data test
+        dat_test = data.pop(0)
+        dat_test_atr = dat_test.pop(0)
+        dat_test_harga = dat_test.pop(0)
+        # training data
+        trainingg = training(dat_test_atr,dat_test_harga)
+        # data predict
+        hasil = testing(trainingg,dat_test_atr)
+        print("hasil testing asuransi : ")
+        print(hasil)
+        self.assertGreaterEqual(hasil[0], 1)
+
 
