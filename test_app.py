@@ -51,3 +51,18 @@ class TestApp(unittest.TestCase):
                 print("hasil beda")
 
         self.assertEqual(data_testing_label.values[0], prediction[0])
+
+    def test_04_idam_1184063(self):
+        from Chapter01.idam1184063 import preparation,training,testing
+
+        data = preparation()
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_win = train.pop(0)
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_win = test.pop(0)
+
+        t = training(dfs_train_att, dfs_train_win)
+        result = testing(t,dfs_test_att)
+        self.assertLessEqual(result[0], 1)
