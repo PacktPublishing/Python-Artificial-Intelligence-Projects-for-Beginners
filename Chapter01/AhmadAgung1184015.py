@@ -27,5 +27,5 @@ def training(d_train_att,d_train_pass):
     t = t.fit(d_train_att, d_train_pass)
     return t
 
-def testing(t,testdataframe):
-    return t.predict(testdataframe)
+def testing(t,testdataframee):
+    return t.predict(testdataframee)
