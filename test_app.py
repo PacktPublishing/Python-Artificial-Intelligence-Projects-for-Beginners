@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/student-por.csv'
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
-        hasiltestingsemua =  testing(t,d_test_att)
+        hasiltestingsemua =   testing(t,d_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
