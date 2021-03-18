@@ -106,4 +106,3 @@ class TestApp(unittest.TestCase):
         result = testing(t,dfs_test_att)
         self.assertLessEqual(result[0], 1)
         
-        self.assertEqual(data_testing_label.values[0], prediction[0])
