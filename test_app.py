@@ -182,30 +182,6 @@ class TestApp(unittest.TestCase):
         print(result)
         self.assertLessEqual(result[0], 1)
 
-<<<<<<< HEAD
-
-    def test_02_Nurhanifah_1184086(self):
-        from Chapter01.Nurhanifah_1184086 import preparation, training, testing
-        #data
-        data = preparation()
-        #train data
-        train = data.pop(0)
-        dfs_train_att = train.pop(0)
-        dfs_train_Disciplinary_failure = train.pop(0)
-        #test data
-        test = data.pop(0)
-        dfs_test_att = test.pop(0)
-        dfs_test_Disciplinary_failure = test.pop(0)
-        #training
-        t = training(dfs_train_att, dfs_train_Disciplinary_failure)
-        #predict
-        result = testing(t,dfs_test_att)
-        print("result : ")
-        print(result)
-        self.assertLessEqual(result[0], 1)
-
-
-=======
     def test_02_rayhany_1184007(self):
         from Chapter01.rayhanyuda1184007 import preparation,training,testing
         #data
@@ -265,4 +241,4 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
-
+        
