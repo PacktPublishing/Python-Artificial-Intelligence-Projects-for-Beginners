@@ -238,6 +238,6 @@ class TestApp(unittest.TestCase):
         t = training(d_train_att, d_train_pass)
 
         result = testing(t,d_test_att)
-        print("Hasilnya BOS : ")
+        print("Maka yang di approve adalah : ")
         print(result)
         self.assertGreaterEqual(result[0],1)

@@ -10,14 +10,14 @@ def preparation():
     d_train = d[:35]
     d_test = d[35:]
     
-    d_train_att = d_train.drop(['no'], axis=1) #fitur
-    d_train_pass = d_train['no'] #label
+    d_train_att = d_train.drop(['Approved'], axis=1) #fitur
+    d_train_pass = d_train['Approved'] #label
     
-    d_test_att = d_test.drop(['no'], axis=1)
-    d_test_pass = d_test['no']
+    d_test_att = d_test.drop(['Approved'], axis=1)
+    d_test_pass = d_test['Approved']
     
-    d_att = d.drop(['no'], axis=1)
-    d_pass = d['no']
+    d_att = d.drop(['Approved'], axis=1)
+    d_pass = d['Approved']
 
     data = [[d_train_att, d_train_pass], [d_test_att, d_test_pass]]
     return data
