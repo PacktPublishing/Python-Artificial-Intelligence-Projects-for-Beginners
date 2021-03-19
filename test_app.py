@@ -182,7 +182,4 @@ class TestApp(unittest.TestCase):
         print(result)
         self.assertLessEqual(result[0], 1)
 
-a = TestApp()
-a.test_02_mwahyu_1184059()
-
 
