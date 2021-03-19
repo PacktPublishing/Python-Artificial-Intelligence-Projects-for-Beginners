@@ -221,3 +221,23 @@ class TestApp(unittest.TestCase):
         print("hasil testing spam : ")
         print(hasil)
         self.assertLessEqual(hasil[0], 1)
+    
+    def test_02_adityar_1184021(self):
+        from Chapter01.adityar1184021 import preparation, training, testing
+        #datasetpath = 'Chapter01/dataset/kuli_ah_daring.csv'
+        data = preparation()
+
+        train = data.pop(0)
+        d_train_att = train.pop(0)
+        d_train_pass = train.pop(0)
+
+        test = data.pop(0)
+        d_test_att = test.pop(0)
+        d_test_pass = test.pop(0)
+
+        t = training(d_train_att, d_train_pass)
+
+        result = testing(t,d_test_att)
+        print("Maka yang di approve adalah : ")
+        print(result)
+        self.assertGreaterEqual(result[0],1)
