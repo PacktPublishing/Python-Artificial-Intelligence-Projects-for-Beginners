@@ -162,9 +162,9 @@ class TestApp(unittest.TestCase):
         self.assertLessEqual(ambilsatuhasiltesting, 1)
 
     
-        def test_02_mwahyu_1184059(self):
+    def test_02_mwahyu_1184059(self):
         from Chapter01.mwahyu1184059 import preparation,training,testing
-        #data
+         #data
         data = preparation()
         #train data
         train = data.pop(0)
@@ -181,5 +181,8 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
+
+a = TestApp()
+a.test_02_mwahyu_1184059()
 
 
