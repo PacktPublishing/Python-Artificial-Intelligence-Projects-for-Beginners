@@ -5,21 +5,21 @@ def preparation(datasetpath):
     # a = len(data)
     # print(a)
     dat = data.sample(frac=1)
-    dat_train = dat[:522]
-    dat_test = dat[522:]
+    dat_train = dat[:2220]
+    dat_test = dat[2220:]
 
-    dat_test_atr = dat_test.drop(['charges'], axis=1)
-    dat_test_harga = dat_test['charges']
-    dat_train_atr = dat_train.drop(['charges'], axis=1)
-    dat_train_harga = dat_train['charges']
+    dat_test_atr = dat_test.drop(['classification'], axis=1)
+    dat_test_cls = dat_test['classification']
+    dat_train_atr = dat_train.drop(['classification'], axis=1)
+    dat_train_cls = dat_train['classification']
 
-    total = [[dat_test_atr,dat_test_harga], [dat_train_atr,dat_train_harga]]
+    total = [[dat_test_atr,dat_test_cls], [dat_train_atr,dat_train_cls]]
     return total
 
-def training(dat_train_atr,dat_train_harga):
+def training(dat_train_atr,dat_train_cls):
     from sklearn import tree as tr
     trainin = tr.DecisionTreeClassifier(criterion="entropy", max_depth=5)
-    trainingg = trainin.fit(dat_train_atr,dat_train_harga)
+    trainingg = trainin.fit(dat_train_atr,dat_train_cls)
     return trainingg
 
 def testing(training, testdataframe):
