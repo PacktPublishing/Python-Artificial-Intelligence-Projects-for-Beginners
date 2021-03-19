@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         dataset='Chapter01/dataset/student-por.csv'
         d_train_att,d_train_pass,d_test_att,d_test_pass,d_att,d_pass= preparation(dataset)
         t = training(d_train_att,d_train_pass)
-        hasiltestingsemua = 	testing(t,d_test_att)
+        hasiltestingsemua = testing(t,d_test_att)
         print('\n hasil testing : ')
         print(hasiltestingsemua)
         ambilsatuhasiltesting = hasiltestingsemua[0]
@@ -182,6 +182,7 @@ class TestApp(unittest.TestCase):
         print(result)
         self.assertLessEqual(result[0], 1)
 
+<<<<<<< HEAD
 
     def test_02_Nurhanifah_1184086(self):
         from Chapter01.Nurhanifah_1184086 import preparation, training, testing
@@ -203,4 +204,65 @@ class TestApp(unittest.TestCase):
         print(result)
         self.assertLessEqual(result[0], 1)
 
+
+=======
+    def test_02_rayhany_1184007(self):
+        from Chapter01.rayhanyuda1184007 import preparation,training,testing
+        #data
+        dt = preparation()
+        #train data
+        train = dt.pop(0)
+        dfrs_train_atribut = train.pop(0)
+        dfrs_train_sick = train.pop(0)
+        #test data
+        test = dt.pop(0)
+        dfrs_test_atribut = test.pop(0)
+        dfrs_test_sick = test.pop(0)
+        #training
+        r = training(dfrs_train_atribut, dfrs_train_sick)
+        #predict
+        output = testing(r,dfrs_test_atribut)
+        print("output test: ")
+        print(output)
+        self.assertLessEqual(output[0], 1)
+    
+    def test_02_rayhanprastya_1184069(self):
+        from Chapter01.rayhanprastya1184069 import preparation,training, testing
+        datasetpath = 'Chapter01/dataset/spambase.csv'
+        data = preparation(datasetpath)
+        # data train
+        dat_train = data.pop(0)
+        dat_train_atr = dat_train.pop(0)
+        dat_train_cls = dat_train.pop(0)
+        # data test
+        dat_test = data.pop(0)
+        dat_test_atr = dat_test.pop(0)
+        dat_test_cls = dat_test.pop(0)
+        # training data
+        trainingg = training(dat_test_atr,dat_test_cls)
+        # data predict
+        hasil = testing(trainingg,dat_test_atr)
+        print("hasil testing spam : ")
+        print(hasil)
+        self.assertLessEqual(hasil[0], 1)
+
+    def test_02_Nurhanifah_1184086(self):
+        from Chapter01.Nurhanifah_1184086 import preparation, training, testing
+        #data
+        data = preparation()
+        #train data
+        train = data.pop(0)
+        dfs_train_att = train.pop(0)
+        dfs_train_Disciplinary_failure = train.pop(0)
+        #test data
+        test = data.pop(0)
+        dfs_test_att = test.pop(0)
+        dfs_test_Disciplinary_failure = test.pop(0)
+        #training
+        t = training(dfs_train_att, dfs_train_Disciplinary_failure)
+        #predict
+        result = testing(t,dfs_test_att)
+        print("result : ")
+        print(result)
+        self.assertLessEqual(result[0], 1)
 
