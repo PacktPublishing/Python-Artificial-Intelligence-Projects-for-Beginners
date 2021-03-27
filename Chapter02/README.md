@@ -5,7 +5,7 @@
 4. fungsi training mengembalikan berupa model decission tree dari inputan data training dan label training
 5. fungsi testing mengembalikan label prediksi dari inputan data testing 
 6. buat fungsi testing tambahkan di bagian bawah file test_app.py, fungsi test dengan nama : test_03_nama_npm, yang berisi untuk melakukan testing tiga fungsi yang sudah anda buat dengan dataset anda sendiri
-7. Dikumpulkan dengan cara merge request ke branch 2021b untuk kelas b, 2021c untuk kelas c, maksimal hari jumat jam 11.00 wib
+7. Dikumpulkan dengan cara merge request ke branch 2021b untuk kelas b, 2021c untuk kelas c, maksimal hari jumat jam 11.00 wib, judul diisi nama npm, deskripsi diisi penjelasan jelas bagaimana kelas kelas dan method tersebut bekerja. dijelaskan secara poin
 
 # Kriteria Penilaian
 1. Fork hanya boleh sekali seumur hidup jika anda melakukan fork lagi maka diskon nilai 50 persen
