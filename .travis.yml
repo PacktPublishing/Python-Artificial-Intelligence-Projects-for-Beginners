@@ -3,7 +3,7 @@ language: python
 python:
   - "3.8"
 script:
-  - pytest -v -s --cov=Chapter01 --cov-report term-missing
+  - pytest -v -s --cov=Chapter02 --cov-report term-missing
 before_script:
   - echo "Menjalankan Testing"
 install:
