@@ -241,3 +241,18 @@ class TestApp(unittest.TestCase):
         print("Maka yang di approve adalah : ")
         print(result)
         self.assertGreaterEqual(result[0],1)
+
+    def test_03_dindamajesty_1184011(self):
+        from Chapter02.DindaMajesty1184011 import preparation, training, testing
+
+        datasetpath = 'Chapter01/dataset/mushrooms.txt'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label, df_att, df_label = preparation(datasetpath)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasiltesting = testing(clf, df_test_att.head())
+        # hasil
+        print('\nhasil testing dinda : ')
+        print(hasiltesting)
+        print('Score:', clf.score(df_test_att, df_test_label))
