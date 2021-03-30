@@ -18,13 +18,13 @@ def preparation(datasetpath):
     
     f= f.sample(frac=1)
     
-    f_att = f.iloc[:, 1:118]
-    f_label = f.iloc[:, 0:1]
+    f_att = f.iloc[:, 0:312]
+    f_label = f.iloc[:, 312:0]
     
-    f_train_att = f_att[:6000]
-    f_train_label = f_label[:6000]
-    f_test_att = f_att[6000:]
-    f_test_label = f_label[6000:]
+    f_train_att = f_att[:8000]
+    f_train_label = f_label[:8000]
+    f_test_att = f_att[8000:]
+    f_test_label = f_label[8000:]
     
     f_train_label = f_train_label['AT']
     f_test_label = f_test_label['AT']
