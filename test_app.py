@@ -268,6 +268,7 @@ class TestApp(unittest.TestCase):
         hasil = testing(clf, df_test_att.head())
         # hasil testing
         print('\nhasil testing Batris :', hasil)
+        print('Score:', clf.score(df_test_att, df_test_label))
 
     def test_03_AhmadAgung_1184015(self):
         from Chapter02.AhmadAgung_1184015 import preparation, training, testing
@@ -282,5 +283,5 @@ class TestApp(unittest.TestCase):
         
         print(' testing : ')
         print(hasiltesting)
-        print(clf.score(f_test_att, f_test_label))
-        print('Score:', clf.score(df_test_att, df_test_label))
+        print('Hasil',clf.score(f_test_att, f_test_label))
+        
