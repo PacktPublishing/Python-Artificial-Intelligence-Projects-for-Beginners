@@ -33,7 +33,7 @@ def preparation(datasetpath):
 
 def training(f_train_att, f_train_label):
     from sklearn.ensemble import RandomForestClassifier
-    clf = RandomForestClassifier(max_features=50, random_state=0, n_estimators=100)
+    clf = RandomForestClassifier(max_features=5, random_state=0, n_estimators=100)
     clf = clf.fit(f_train_att, f_train_label)
     return clf
 
