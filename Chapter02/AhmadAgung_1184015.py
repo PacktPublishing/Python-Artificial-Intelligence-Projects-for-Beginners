@@ -29,7 +29,7 @@ def preparation(datasetpath):
     f_train_label = f_train_label['AT']
     f_test_label = f_test_label['AT']
     
-    print(f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label)
+    return f_train_att, f_train_label, f_test_att, f_test_label, f_att, df_label
 
 def training(f_train_att, f_train_label):
     from sklearn.ensemble import RandomForestClassifier
