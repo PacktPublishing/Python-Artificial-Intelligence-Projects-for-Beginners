@@ -127,3 +127,18 @@ class TestApp(unittest.TestCase):
         print("result : ")
         print(result)
         self.assertLessEqual(result[0], 1)
+        
+    def test_03_AhmadAgung_1184015(self):
+        from Chapter02.AhmadAgung_1184015 import preparation, training, testing
+
+        datasetpath = 'Chapter01/dataset/Folds5x2.txt'
+        
+        f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label = preparation(datasetpath)
+        
+        clf = training(f_train_att, f_train_label)
+        
+        hasiltesting = testing(clf, f_test_att.head())
+        
+        print(' testing : ')
+        print(hasiltesting)
+        print(clf.score(f_test_att, f_test_label))
