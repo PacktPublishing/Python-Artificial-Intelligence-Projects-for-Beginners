@@ -51,8 +51,8 @@ def preparation(dataset):
 
 def training(df_train_att, df_train_label):
     from sklearn.ensemble import RandomForestClassifier
-    # instansiasi variabel klasifikasi dengan metode random forest classifier, max atribut yang digunakan ialah 2 kolom di setiap independent treenya
-    clf = RandomForestClassifier(max_features=2, random_state=0, n_estimators=100)
+    # instansiasi variabel klasifikasi dengan metode random forest classifier, max atribut yang digunakan ialah 4 kolom di setiap independent treenya
+    clf = RandomForestClassifier(max_features=4, random_state=0, n_estimators=100)
     # klasifikasi data training df_train_att dan df_train_label
     clf = clf.fit(df_train_att, df_train_label)
     return clf
