@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn import preprocessing
 
 def preparation(datasetpath):
-    f = pd.read_csv(datasetpath, sep='', header=None, error_bad_lines=False, warn_bad_lines=False, usecols=[0,1,2,3,4], names=['AT','V','AP','RH','PE'])
+    f = pd.read_csv(datasetpath, sep=',', header=None, error_bad_lines=False, warn_bad_lines=False, usecols=[0,1,2,3,4], names=['AT','V','AP','RH','PE'])
     
     f = pd.get_dummies(f, columns=['V','AP','RH','PE'])
     
@@ -22,7 +22,7 @@ def preparation(datasetpath):
     f_label = f.iloc[:, 312:]
     
     f_train_att = f_att[:8000]
-    f_train_label = f_label[:800]
+    f_train_label = f_label[:8000]
     f_test_att = f_att[8000:]
     f_test_label = f_label[8000:]
     
