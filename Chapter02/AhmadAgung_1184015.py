@@ -31,12 +31,12 @@ def preparation(datasetpath):
     
     print(f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label)
 
-def training(df_train_att, df_train_label):
+def training(f_train_att, f_train_label):
     from sklearn.ensemble import RandomForestClassifier
     clf = RandomForestClassifier(max_features=50, random_state=0, n_estimators=100)
-    clf = clf.fit(df_train_att, df_train_label)
+    clf = clf.fit(f_train_att, f_train_label)
     return clf
 
 
-def testing(clf, df_test_att):
-    return clf.predict(df_test_att.head())
+def testing(clf, f_test_att):
+    return clf.predict(f_test_att.head())
