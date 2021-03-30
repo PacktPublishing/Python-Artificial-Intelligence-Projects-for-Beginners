@@ -26,8 +26,8 @@ def preparation(datasetpath):
     f_test_att = f_att[6000:]
     f_test_label = f_label[6000:]
     
-    f_train_label = f_train_label['GAS']
-    f_test_label = f_test_label['GAS']
+    f_train_label = f_train_label['AT']
+    f_test_label = f_test_label['AT']
     
     print(f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label)
 
