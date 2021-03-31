@@ -269,3 +269,18 @@ class TestApp(unittest.TestCase):
         # hasil testing
         print('\nhasil testing Batris :', hasil)
         print('Score:', clf.score(df_test_att, df_test_label))
+
+    def test_03_AhmadAgung_1184015(self):
+        from Chapter02.AhmadAgung_1184015 import preparation, training, testing
+
+        datasetpath = 'Chapter01/dataset/connect-4.txt'
+        f_train_att, f_train_label, f_test_att, f_test_label, f_att, f_label = preparation(datasetpath)
+        #testing dari fungsi traning
+        clf = training(f_train_att, f_train_label)
+        #testing dari fungsi testing
+        hasiltesting = testing(clf, f_test_att.head())
+
+        #hasil testing yang dilakukan        
+        print(' testing : ')
+        print(hasiltesting)
+        print('Hasil draw(0) lose(1) win(2)',clf.score(f_test_att, f_test_label))
