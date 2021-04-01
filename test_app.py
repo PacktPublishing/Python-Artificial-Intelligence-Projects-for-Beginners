@@ -256,7 +256,7 @@ class TestApp(unittest.TestCase):
         print('\nhasil testing dinda : ')
         print(hasiltesting)
         print('Score:', clf.score(df_test_att, df_test_label))
-        
+         
     def test_03_DyningAida_1184030(self):
         from Chapter02.DyningAida1184030 import preparation, training, testing
         dataset = 'Chapter01/dataset/nursery.txt'
@@ -269,7 +269,7 @@ class TestApp(unittest.TestCase):
         # hasil testing
         print('\nhasil testing Batris :', hasil)
         print('Score:', clf.score(df_test_att, df_test_label))
-
+ 
     def test_03_AhmadAgung_1184015(self):
         from Chapter02.AhmadAgung_1184015 import preparation, training, testing
 
@@ -317,3 +317,4 @@ class TestApp(unittest.TestCase):
         # hasil testing
         print('\nhasil testing hanifah :', hasil)
         print('Score:', clf.score(df_test_att, df_test_label))
+        self.assertLessEqual(hasil[1], 1)
