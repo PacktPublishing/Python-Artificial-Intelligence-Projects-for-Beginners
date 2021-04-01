@@ -313,3 +313,5 @@ class TestApp(unittest.TestCase):
         allresult = testing(clf, df_test_att.head())
         print('\n hasil testing : ', allresult)
         print('Score:', clf.score(df_test_att, df_test_label))
+        oneresult = allresult[0]
+        self.assertLessEqual(oneresult,1)
