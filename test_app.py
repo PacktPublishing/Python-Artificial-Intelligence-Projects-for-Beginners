@@ -240,7 +240,7 @@ class TestApp(unittest.TestCase):
         result = testing(t,d_test_att)
         print("Maka yang di approve adalah : ")
         print(result)
-        self.assertGreaterEqual(result[0], 0)
+        self.assertGreaterEqual(result[0],1)
 
     def test_03_dindamajesty_1184011(self):
         from Chapter02.DindaMajesty1184011 import preparation, training, testing
@@ -256,7 +256,7 @@ class TestApp(unittest.TestCase):
         print('\nhasil testing dinda : ')
         print(hasiltesting)
         print('Score:', clf.score(df_test_att, df_test_label))
-        
+         
     def test_03_DyningAida_1184030(self):
         from Chapter02.DyningAida1184030 import preparation, training, testing
         dataset = 'Chapter01/dataset/nursery.txt'
@@ -269,7 +269,7 @@ class TestApp(unittest.TestCase):
         # hasil testing
         print('\nhasil testing Batris :', hasil)
         print('Score:', clf.score(df_test_att, df_test_label))
-
+ 
     def test_03_AhmadAgung_1184015(self):
         from Chapter02.AhmadAgung_1184015 import preparation, training, testing
 
@@ -305,6 +305,20 @@ class TestApp(unittest.TestCase):
         print(result)
         print("score : "+ str(t.score(testAttr, testVar)))
         
+    def test_04_Nurhanifah_1184086(self):
+        from Chapter02.Nurhanifah1184086 import preparation, training, testing
+        dataset = 'Chapter01/dataset/Callt.txt'
+        # testing function preparation
+        df_train_att, df_train_label, df_test_att, df_test_label, df_att, df_label = preparation(dataset)
+        # testing function training
+        clf = training(df_train_att, df_train_label)
+        # testing function testing
+        hasil = testing(clf, df_test_att.head())
+        # hasil testing
+        print('\nhasil testing hanifah :', hasil)
+        print('Score:', clf.score(df_test_att, df_test_label))
+        self.assertLessEqual(hasil[1], 1)
+    
     def test_03_alifiaZahra_1184051(self):
         from Chapter02.alifiaZahra1184051 import preparation, training, testing
         datasetpath ='Chapter01/dataset/poker-hand2.txt'
