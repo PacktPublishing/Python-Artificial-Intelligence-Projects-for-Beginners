@@ -284,3 +284,25 @@ class TestApp(unittest.TestCase):
         print(' testing : ')
         print(hasiltesting)
         print('Hasil draw(0) lose(1) win(2)',clf.score(f_test_att, f_test_label))
+
+    def test_03_IdamFadilah_1184063(self):
+        from Chapter02.IdamFadilah1184063 import preparation, training, testing
+        data = preparation()
+
+        train = data.pop(0)
+        test = data.pop(0)
+
+        trainAttr = train.pop(0)
+        trainVar = train.pop(0)
+
+        testAttr = test.pop(0)
+        testVar = test.pop(0)
+
+        t = training(trainAttr, trainVar)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("score : "+ str(t.score(testAttr, testVar)))
+
+    
