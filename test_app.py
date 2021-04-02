@@ -329,3 +329,23 @@ class TestApp(unittest.TestCase):
         print('Score:', clf.score(df_test_att, df_test_label))
         oneresult = allresult[0]
         self.assertLessEqual(oneresult,1)
+
+    def test_03_adityar_1184021(self):
+        from Chapter02.adityar_1184021 import preparation, training, testing
+        data = preparation()
+
+        train = data.pop(0)
+        test = data.pop(0)
+
+        trainAttr = train.pop(0)
+        trainLabel = train.pop(0)
+
+        testAttr = test.pop(0)
+        testLabel = test.pop(0)
+
+        t = training(trainAttr, trainLabel)
+
+        result = testing(t, testAttr)
+        print('result : ')
+        print(result)
+        print("Hasilnya Adalah : "+ str(t.score(testAttr, testLabel)))
