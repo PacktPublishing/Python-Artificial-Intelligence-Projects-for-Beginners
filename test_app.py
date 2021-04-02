@@ -240,7 +240,7 @@ class TestApp(unittest.TestCase):
         result = testing(t,d_test_att)
         print("Maka yang di approve adalah : ")
         print(result)
-        self.assertGreaterEqual(result[0],1)
+        self.assertGreaterEqual(result[0],0)
 
     def test_03_dindamajesty_1184011(self):
         from Chapter02.DindaMajesty1184011 import preparation, training, testing
